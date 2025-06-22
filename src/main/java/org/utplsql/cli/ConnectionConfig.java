@@ -10,7 +10,7 @@ public class ConnectionConfig {
     private final String connect;
 
     public ConnectionConfig(String connectString) {
-        Matcher m = Pattern.compile("^(\".+\"|[^/]+)/(\".+\"|[^@]+)@(.*)$").matcher(connectString);
+        Matcher m = Pattern.compile("^(\".+\"|[^/]*)/(\".+\"|[^@]*)@(.*)$").matcher(connectString);
         if (m.find()) {
             user = stripEnclosingQuotes(m.group(1));
             password = stripEnclosingQuotes(m.group(2));
